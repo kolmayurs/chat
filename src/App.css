@@ -1,9 +1,10 @@
+
+
 .App {
   width: 100%;
   max-width: 450px;
   height: 90vh;
   margin: 50px auto;
-  overflow: auto;
   border: 1px solid #f1f1f1;
   text-align: center;
   background-color: #ECEFF1;
@@ -13,37 +14,35 @@ h4{
   font-size: 20px;
   line-height: 24px;
 }
-div{
-  display: block;
-  width: 90%;
-  margin: 0 auto;
-word-wrap: break-word;
-}
 .leftbox{
+  width: 90%;
     text-align: left;
     display: inline-block;
     float: left;
     padding: 10px;
-        font-size: 18px;
-  line-height: 24px;
+        font-size: 16px;
+  line-height: 22px;
   margin: 10px;
+  font-weight: 400;
   word-wrap: break-word;
   background-color: #fff;
-  max-width: 190px;
+  max-width: 200px;
   border-radius: 12px;
 
 }
 .rightbox{
+  width: 90%;
     text-align: left;
     display: inline-block;
     float: right;
     padding: 10px;
-        font-size: 18px;
-  line-height: 24px;
+        font-size: 16px;
+  line-height: 22px;
   margin: 10px;
+  font-weight: 400;
   word-wrap: break-word;
   background-color: #fff;
-  max-width: 190px;
+  max-width: 200px;
   border-radius: 12px;
 
 }
@@ -79,4 +78,31 @@ img{
 
 .author{
   font-weight: bold;
+}
+
+.chat-box{
+  height: 75vh;
+overflow: auto;
+padding: 0px;
+margin: 0px;
+}
+
+.chat-box::-webkit-scrollbar-track
+{
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  border-radius: 10px;
+  background-color: #F5F5F5;
+}
+
+.chat-box::-webkit-scrollbar
+{
+  width: 12px;
+  background-color: #F5F5F5;
+}
+
+.chat-box::-webkit-scrollbar-thumb
+{
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+  background-color: #555;
 }

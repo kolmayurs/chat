@@ -17,7 +17,7 @@ class App extends React.Component{
 
         this.socket.on('RECEIVE_MESSAGE', function(data){
             addMessage(data);
-            let element = document.getElementById("App");
+            let element = document.getElementById("chat-box");
             element.scrollTop = element.scrollHeight;
         });
 
@@ -45,8 +45,9 @@ class App extends React.Component{
 
     componentWillMount(){
     let userName = prompt('Please Enter your name');
+    let randomnumber = Math.floor(Math.random()*100) + 1;
     if(userName === '' || userName === null || typeof userName === 'undefined'){
-      this.setState({username: 'Guest' })
+      this.setState({username: 'Guest ' + randomnumber })
     }
     else{
       this.setState({username: userName })
@@ -65,20 +66,25 @@ class App extends React.Component{
     }
     render(){
       let colors = ['red', 'green', 'blue', 'orange', 'yellow'];
-
+      let a = [];
         const data = this.state.messages.map((items, i) => {
+          if(a.indexOf(items.author) === -1){
+            a.push(items.author);
+          }
            if(items.author === this.state.username){
-            return(<div className="rightbox" key={'items'+i}><span className="author" style={{color: colors[i%5]}}>You :</span><br />{items.message}</div>)
+            return(<div className="rightbox" key={'items'+i}><span className="author" style={{color: colors[a.indexOf(items.author)%5]}}>You :</span><br />{items.message}</div>)
            }
            else{
-             return(<div className="leftbox" key={'items'+i}><span className="author" style={{color: colors[i%5]}}>{items.author} :</span><br />{items.message}</div>)
+             return(<div className="leftbox" key={'items'+i}><span className="author" style={{color: colors[a.indexOf(items.author)%5]}}>{items.author} :</span><br />{items.message}</div>)
            }
       
     })
         return (
-            <div id="App" className="App">
+            <div className="App">
       <h4>Live Chat</h4>
-      {data}
+      <div id="chat-box" className="chat-box">
+          {data}
+      </div>
         <div className='chat-input'>
           <input value={this.state.message} onChange={ev => this.setState({message: ev.target.value})} type="text" placeholder="Enter Here.." />
           <img src={send} alt="send" onClick={this.sendMessage} />
