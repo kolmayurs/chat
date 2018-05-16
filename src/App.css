@@ -65,7 +65,7 @@ input{
   padding: 12px;
   vertical-align: top;
    border-radius: 12px;
-   border: 0px;
+   border: 1px solid #f1f1f1;
    outline: 0px;
 }
 
