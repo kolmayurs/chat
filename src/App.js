@@ -65,7 +65,7 @@ class App extends React.Component{
     render(){
         const data = this.state.messages.map((items, i) => {
            if(items.author === this.state.username){
-            return(<h5 className="right" key={'items'+i}>{items.author}: {items.message}</h5>)
+            return(<h5 className="right" key={'items'+i}>You: {items.message}</h5>)
            }
            else{
              return(<h5 className="left" key={'items'+i}>{items.author}: {items.message}</h5>)
