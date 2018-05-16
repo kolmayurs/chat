@@ -2,11 +2,6 @@ import React from "react";
 import io from "socket.io-client";
 import './App.css';
 
-function updateScroll(){
-    var element = document.getElementById("App");
-    element.scrollTop = element.scrollHeight;
-}
-
 class App extends React.Component{
     constructor(props){
         super(props);
