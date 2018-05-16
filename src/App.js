@@ -1,6 +1,7 @@
 import React from "react";
 import io from "socket.io-client";
 import './App.css';
+import send from './img/send.png'
 
 class App extends React.Component{
     constructor(props){
@@ -63,12 +64,14 @@ class App extends React.Component{
     }
     }
     render(){
+      let colors = ['red', 'green', 'blue', 'orange', 'yellow'];
+
         const data = this.state.messages.map((items, i) => {
            if(items.author === this.state.username){
-            return(<h5 className="right" key={'items'+i}>You: {items.message}</h5>)
+            return(<div className="rightbox" key={'items'+i}><span className="author" style={{color: colors[i%5]}}>You :</span><br />{items.message}</div>)
            }
            else{
-             return(<h5 className="left" key={'items'+i}>{items.author}: {items.message}</h5>)
+             return(<div className="leftbox" key={'items'+i}><span className="author" style={{color: colors[i%5]}}>{items.author} :</span><br />{items.message}</div>)
            }
       
     })
@@ -78,7 +81,7 @@ class App extends React.Component{
       {data}
         <div className='chat-input'>
           <input value={this.state.message} onChange={ev => this.setState({message: ev.target.value})} type="text" placeholder="Enter Here.." />
-          <button onClick={this.sendMessage}>Submit</button>
+          <img src={send} alt="send" onClick={this.sendMessage} />
         </div>
       </div>
            
