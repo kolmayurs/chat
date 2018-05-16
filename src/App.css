@@ -13,6 +13,7 @@ img{
   margin: 50px auto;
   border: 1px solid #ECEFF1;
   text-align: center;
+  overflow: hidden;
   background-color: #ECEFF1;
   border-radius: 12px;
 }
@@ -61,7 +62,7 @@ h4{
   bottom: 50px;
   display: block;
   margin: 00px auto;
-   background-color: #ECEFF1;
+
 
 }
 input{
