@@ -28,11 +28,16 @@ class App extends React.Component{
 
         this.sendMessage = ev => {
             ev.preventDefault();
-            this.socket.emit('SEND_MESSAGE', {
+            if(this.state.message !== ''){
+              this.socket.emit('SEND_MESSAGE', {
                 author: this.state.username,
                 message: this.state.message
             })
             this.setState({message: ''});
+            }
+            else{
+              alert("Cant send empty message");
+            }
 
         }
     }
