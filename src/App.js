@@ -65,7 +65,7 @@ class App extends React.Component{
     }
     }
     render(){
-      let colors = ['red', 'green', 'blue', 'orange', 'yellow'];
+      let colors = ['red', 'green', 'blue', 'orange', 'violet'];
       let a = [];
         const data = this.state.messages.map((items, i) => {
           if(a.indexOf(items.author) === -1){

@@ -1,11 +1,17 @@
-
+img{
+    -khtml-user-select: none;
+    -o-user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
 
 .App {
   width: 100%;
   max-width: 450px;
   height: 90vh;
   margin: 50px auto;
-  border: 1px solid #f1f1f1;
+  border: 1px solid #ECEFF1;
   text-align: center;
   background-color: #ECEFF1;
   border-radius: 12px;
@@ -55,6 +61,7 @@ h4{
   bottom: 50px;
   display: block;
   margin: 00px auto;
+   background-color: #ECEFF1;
 
 }
 input{
@@ -65,7 +72,7 @@ input{
   padding: 12px;
   vertical-align: top;
    border-radius: 12px;
-   border: 1px solid #f1f1f1;
+   border: 1px solid #ECEFF1;
    outline: 0px;
 }
 
