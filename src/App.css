@@ -63,7 +63,6 @@ h4{
   display: block;
   margin: 00px auto;
 
-
 }
 input{
   width: 100%;
@@ -122,6 +121,7 @@ margin: 0px;
     margin: 0px auto;
   width: 100%;
   height: 100vh;
+  border-radius: 0px;
 }
 input{
   max-width: 300px;
