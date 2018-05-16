@@ -1,0 +1,28 @@
+.App {
+  text-align: left;
+  width: 100%;
+  max-width: 1024px;
+  height: 90vh;
+  margin: 20px auto;
+  overflow: auto;
+}
+
+.chat-input{
+  width: 100%;
+  max-width: 1024px;
+  position: fixed;
+  bottom: 0px;
+  display: block;
+  margin: 20px auto;
+}
+input{
+  width: 70%;
+  display: inline-block;
+  padding: 10px;
+}
+
+button{
+  width: 20%;
+  display: inline-block;
+  padding: 10px;
+}
