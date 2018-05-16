@@ -11,7 +11,7 @@ class App extends React.Component{
             message: '',
             messages: []
         };
-
+         this.handleKeyPress =this.handleKeyPress.bind(this);
         this.socket = io('https://socket-o-server.herokuapp.com/');
 
         this.socket.on('RECEIVE_MESSAGE', function(data){
@@ -43,7 +43,16 @@ class App extends React.Component{
       this.setState({username: userName })
     }
   }
+  componentDidMount(){
+      document.addEventListener("keypress", this.handleKeyPress, true);
+    }
 
+ handleKeyPress(event){
+      let keycode = (event.keyCode ? event.keyCode : event.which);
+    if (keycode === 13) {
+        this.sendMessage(event);
+    }
+    }
     render(){
         const data = this.state.messages.map((items, i) => {
       return(<h5 key={'items'+i}>{items.author}: {items.message}</h5>)
