@@ -62,7 +62,7 @@ class App extends React.Component{
       <h4>Hello World</h4>
       {data}
         <div className='chat-input'>
-          <input value={this.state.message} value={this.state.message} onChange={ev => this.setState({message: ev.target.value})} type="text" placeholder="Enter Here.." />
+          <input value={this.state.message} onChange={ev => this.setState({message: ev.target.value})} type="text" placeholder="Enter Here.." />
           <button onClick={this.sendMessage}>Submit</button>
         </div>
       </div>
