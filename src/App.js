@@ -2,6 +2,11 @@ import React from "react";
 import io from "socket.io-client";
 import './App.css';
 
+function updateScroll(){
+    var element = document.getElementById("App");
+    element.scrollTop = element.scrollHeight;
+}
+
 class App extends React.Component{
     constructor(props){
         super(props);
@@ -16,6 +21,8 @@ class App extends React.Component{
 
         this.socket.on('RECEIVE_MESSAGE', function(data){
             addMessage(data);
+            let element = document.getElementById("App");
+            element.scrollTop = element.scrollHeight;
         });
 
         const addMessage = data => {
@@ -34,6 +41,7 @@ class App extends React.Component{
 
         }
     }
+
     componentWillMount(){
     let userName = prompt('Please Enter your name');
     if(userName === '' || userName === null || typeof userName === 'undefined'){
@@ -47,6 +55,7 @@ class App extends React.Component{
       document.addEventListener("keypress", this.handleKeyPress, true);
     }
 
+
  handleKeyPress(event){
       let keycode = (event.keyCode ? event.keyCode : event.which);
     if (keycode === 13) {
@@ -55,11 +64,17 @@ class App extends React.Component{
     }
     render(){
         const data = this.state.messages.map((items, i) => {
-      return(<h5 key={'items'+i}>{items.author}: {items.message}</h5>)
+           if(items.author === this.state.username){
+            return(<h5 className="right" key={'items'+i}>{items.author}: {items.message}</h5>)
+           }
+           else{
+             return(<h5 className="left" key={'items'+i}>{items.author}: {items.message}</h5>)
+           }
+      
     })
         return (
-            <div className="App">
-      <h4>Hello World</h4>
+            <div id="App" className="App">
+      <h4>Live Chat</h4>
       {data}
         <div className='chat-input'>
           <input value={this.state.message} onChange={ev => this.setState({message: ev.target.value})} type="text" placeholder="Enter Here.." />

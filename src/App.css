@@ -1,12 +1,25 @@
 .App {
-  text-align: left;
   width: 100%;
-  max-width: 1024px;
+  max-width: 900px;
   height: 90vh;
+  padding: 20px;
   margin: 20px auto;
   overflow: auto;
+  border: 1px solid #f1f1f1;
+  text-align: center;
 }
-
+h5{
+  display: block;
+  width: 90%;
+  padding: 20px;
+  margin: 0 auto;
+}
+.left{
+    text-align: left;
+}
+.right{
+    text-align: right;
+}
 .chat-input{
   width: 100%;
   max-width: 1024px;
